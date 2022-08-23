@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "supervisors.json",
+  "title": "Schema Supervisors",
+  "type": "object",
+  "required": [
+    "id",
+    "username",
+    "password",
+    "role",
+    "name",
+    "email",
+    "createdAt",
+    "updatedAt"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "username": {
+      "type": "string"
+    },
+    "password": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string",
+      "const": "supervisors"
+    },
+    "name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "createdAt": {
+      "type": "string"
+    },
+    "updatedAt": {
+      "type": "string"
+    }
+  },
+  "definitions": {
+    "create": {
+      "$ref": "supervisors.json",
+      "type": "object",
+      "required": [
+        "username",
+        "password",
+        "role",
+        "name",
+        "email"
+      ],
+      "errorMessage": {}
+    },
+    "update": {
+      "$ref": "supervisors.json",
+      "type": "object",
+      "required": [],
+      "errorMessage": {}
+    }
+  }
+}

@@ -1,0 +1,771 @@
+{
+	"$id": "index.json",
+	"title": "Schema",
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"type": "object",
+	"definitions": {
+		"admins": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "integer",
+					"format": "int32"
+				},
+				"username": {
+					"type": "string",
+					"maxLength": 255
+				},
+				"password": {
+					"type": "string",
+					"maxLength": 255
+				},
+				"image": {
+					"type": "string",
+					"maxLength": 255
+				},
+				"name": {
+					"type": "string",
+					"maxLength": 255
+				},
+				"nip": {
+					"type": "string",
+					"maxLength": 255
+				},
+				"role": {
+					"type": [
+						"string",
+						"null"
+					],
+					"maxLength": 255
+				},
+				"createdAt": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"updatedAt": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"projects": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/projects"
+					}
+				}
+			},
+			"required": [
+				"id",
+				"username",
+				"password",
+				"image",
+				"name",
+				"nip",
+				"createdAt",
+				"updatedAt"
+			],
+			"definitions": {
+				"create": {
+					"title": "admins_create",
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "integer",
+							"format": "int32"
+						},
+						"username": {
+							"type": "string",
+							"maxLength": 255
+						},
+						"password": {
+							"type": "string",
+							"maxLength": 255
+						},
+						"image": {
+							"type": "string",
+							"maxLength": 255
+						},
+						"name": {
+							"type": "string",
+							"maxLength": 255
+						},
+						"nip": {
+							"type": "string",
+							"maxLength": 255
+						},
+						"role": {
+							"type": [
+								"string",
+								"null"
+							],
+							"maxLength": 255
+						},
+						"createdAt": {
+							"type": "string",
+							"format": "date-time"
+						},
+						"updatedAt": {
+							"type": "string",
+							"format": "date-time"
+						},
+						"projects": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/projects"
+							}
+						}
+					},
+					"required": [
+						"username",
+						"password",
+						"image",
+						"name",
+						"nip"
+					]
+				},
+				"update": {
+					"title": "admins_update",
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "integer",
+							"format": "int32"
+						},
+						"username": {
+							"type": "string",
+							"maxLength": 255
+						},
+						"password": {
+							"type": "string",
+							"maxLength": 255
+						},
+						"image": {
+							"type": "string",
+							"maxLength": 255
+						},
+						"name": {
+							"type": "string",
+							"maxLength": 255
+						},
+						"nip": {
+							"type": "string",
+							"maxLength": 255
+						},
+						"role": {
+							"type": [
+								"string",
+								"null"
+							],
+							"maxLength": 255
+						},
+						"createdAt": {
+							"type": "string",
+							"format": "date-time"
+						},
+						"updatedAt": {
+							"type": "string",
+							"format": "date-time"
+						},
+						"projects": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/projects"
+							}
+						}
+					},
+					"required": []
+				}
+			}
+		},
+		"supervisors": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "integer",
+					"format": "int32"
+				},
+				"username": {
+					"type": "string",
+					"maxLength": 255
+				},
+				"password": {
+					"type": "string",
+					"maxLength": 255
+				},
+				"image": {
+					"type": "string",
+					"maxLength": 255
+				},
+				"name": {
+					"type": "string",
+					"maxLength": 255
+				},
+				"nip": {
+					"type": "string",
+					"maxLength": 255
+				},
+				"role": {
+					"type": [
+						"string",
+						"null"
+					],
+					"maxLength": 255
+				},
+				"createdAt": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"updatedAt": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"project": {
+					"$ref": "#/definitions/projects"
+				}
+			},
+			"required": [
+				"id",
+				"username",
+				"password",
+				"image",
+				"name",
+				"nip",
+				"createdAt",
+				"updatedAt"
+			],
+			"definitions": {
+				"create": {
+					"title": "supervisors_create",
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "integer",
+							"format": "int32"
+						},
+						"username": {
+							"type": "string",
+							"maxLength": 255
+						},
+						"password": {
+							"type": "string",
+							"maxLength": 255
+						},
+						"image": {
+							"type": "string",
+							"maxLength": 255
+						},
+						"name": {
+							"type": "string",
+							"maxLength": 255
+						},
+						"nip": {
+							"type": "string",
+							"maxLength": 255
+						},
+						"role": {
+							"type": [
+								"string",
+								"null"
+							],
+							"maxLength": 255
+						},
+						"createdAt": {
+							"type": "string",
+							"format": "date-time"
+						},
+						"updatedAt": {
+							"type": "string",
+							"format": "date-time"
+						},
+						"project": {
+							"$ref": "#/definitions/projects"
+						}
+					},
+					"required": [
+						"username",
+						"password",
+						"image",
+						"name",
+						"nip"
+					]
+				},
+				"update": {
+					"title": "supervisors_update",
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "integer",
+							"format": "int32"
+						},
+						"username": {
+							"type": "string",
+							"maxLength": 255
+						},
+						"password": {
+							"type": "string",
+							"maxLength": 255
+						},
+						"image": {
+							"type": "string",
+							"maxLength": 255
+						},
+						"name": {
+							"type": "string",
+							"maxLength": 255
+						},
+						"nip": {
+							"type": "string",
+							"maxLength": 255
+						},
+						"role": {
+							"type": [
+								"string",
+								"null"
+							],
+							"maxLength": 255
+						},
+						"createdAt": {
+							"type": "string",
+							"format": "date-time"
+						},
+						"updatedAt": {
+							"type": "string",
+							"format": "date-time"
+						},
+						"project": {
+							"$ref": "#/definitions/projects"
+						}
+					},
+					"required": []
+				}
+			}
+		},
+		"projects": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "integer",
+					"format": "int32"
+				},
+				"image": {
+					"type": "string",
+					"maxLength": 255
+				},
+				"name": {
+					"type": "string",
+					"maxLength": 255
+				},
+				"name_company": {
+					"type": "string",
+					"maxLength": 255
+				},
+				"contract_number": {
+					"type": "integer",
+					"format": "int32"
+				},
+				"contract_date": {
+					"type": "string",
+					"format": "date"
+				},
+				"activity": {
+					"type": "string"
+				},
+				"status": {
+					"type": "string",
+					"maxLength": 255
+				},
+				"progress": {
+					"type": "number"
+				},
+				"fund_source": {
+					"type": "string",
+					"maxLength": 255
+				},
+				"fiscal_year": {
+					"type": "string",
+					"maxLength": 255
+				},
+				"coordinate": {
+					"type": "array",
+					"items": {
+						"type": "number",
+						"format": "float"
+					}
+				},
+				"address": {
+					"type": "array",
+					"items": {
+						"type": "string",
+						"maxLength": 255
+					}
+				},
+				"proposal": {
+					"type": "string",
+					"maxLength": 255
+				},
+				"createdAt": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"updatedAt": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"reports": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/reports"
+					}
+				},
+				"supervisor": {
+					"$ref": "#/definitions/supervisors"
+				},
+				"admin": {
+					"$ref": "#/definitions/admins"
+				}
+			},
+			"required": [
+				"id",
+				"image",
+				"name",
+				"name_company",
+				"contract_number",
+				"contract_date",
+				"activity",
+				"status",
+				"progress",
+				"fund_source",
+				"fiscal_year",
+				"coordinate",
+				"address",
+				"proposal",
+				"createdAt",
+				"updatedAt"
+			],
+			"definitions": {
+				"create": {
+					"title": "projects_create",
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "integer",
+							"format": "int32"
+						},
+						"image": {
+							"type": "string",
+							"maxLength": 255
+						},
+						"name": {
+							"type": "string",
+							"maxLength": 255
+						},
+						"name_company": {
+							"type": "string",
+							"maxLength": 255
+						},
+						"contract_number": {
+							"type": "integer",
+							"format": "int32"
+						},
+						"contract_date": {
+							"type": "string",
+							"format": "date"
+						},
+						"activity": {
+							"type": "string"
+						},
+						"status": {
+							"type": "string",
+							"maxLength": 255
+						},
+						"progress": {
+							"type": "number"
+						},
+						"fund_source": {
+							"type": "string",
+							"maxLength": 255
+						},
+						"fiscal_year": {
+							"type": "string",
+							"maxLength": 255
+						},
+						"coordinate": {
+							"type": "array",
+							"items": {
+								"type": "number",
+								"format": "float"
+							}
+						},
+						"address": {
+							"type": "array",
+							"items": {
+								"type": "string",
+								"maxLength": 255
+							}
+						},
+						"proposal": {
+							"type": "string",
+							"maxLength": 255
+						},
+						"createdAt": {
+							"type": "string",
+							"format": "date-time"
+						},
+						"updatedAt": {
+							"type": "string",
+							"format": "date-time"
+						},
+						"reports": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/reports"
+							}
+						},
+						"supervisor": {
+							"$ref": "#/definitions/supervisors"
+						},
+						"admin": {
+							"$ref": "#/definitions/admins"
+						}
+					},
+					"required": [
+						"image",
+						"name",
+						"name_company",
+						"contract_number",
+						"contract_date",
+						"activity",
+						"status",
+						"progress",
+						"fund_source",
+						"fiscal_year",
+						"coordinate",
+						"address",
+						"proposal"
+					]
+				},
+				"update": {
+					"title": "projects_update",
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "integer",
+							"format": "int32"
+						},
+						"image": {
+							"type": "string",
+							"maxLength": 255
+						},
+						"name": {
+							"type": "string",
+							"maxLength": 255
+						},
+						"name_company": {
+							"type": "string",
+							"maxLength": 255
+						},
+						"contract_number": {
+							"type": "integer",
+							"format": "int32"
+						},
+						"contract_date": {
+							"type": "string",
+							"format": "date"
+						},
+						"activity": {
+							"type": "string"
+						},
+						"status": {
+							"type": "string",
+							"maxLength": 255
+						},
+						"progress": {
+							"type": "number"
+						},
+						"fund_source": {
+							"type": "string",
+							"maxLength": 255
+						},
+						"fiscal_year": {
+							"type": "string",
+							"maxLength": 255
+						},
+						"coordinate": {
+							"type": "array",
+							"items": {
+								"type": "number",
+								"format": "float"
+							}
+						},
+						"address": {
+							"type": "array",
+							"items": {
+								"type": "string",
+								"maxLength": 255
+							}
+						},
+						"proposal": {
+							"type": "string",
+							"maxLength": 255
+						},
+						"createdAt": {
+							"type": "string",
+							"format": "date-time"
+						},
+						"updatedAt": {
+							"type": "string",
+							"format": "date-time"
+						},
+						"reports": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/reports"
+							}
+						},
+						"supervisor": {
+							"$ref": "#/definitions/supervisors"
+						},
+						"admin": {
+							"$ref": "#/definitions/admins"
+						}
+					},
+					"required": []
+				}
+			}
+		},
+		"reports": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "integer",
+					"format": "int32"
+				},
+				"project_copy": {},
+				"reported_at": {
+					"type": "string",
+					"format": "date"
+				},
+				"preparation": {
+					"type": "string"
+				},
+				"base_building": {
+					"type": "string"
+				},
+				"structure": {
+					"type": "string"
+				},
+				"supervisor_instruction": {
+					"type": "string"
+				},
+				"createdAt": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"updatedAt": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"project": {
+					"$ref": "#/definitions/projects"
+				}
+			},
+			"required": [
+				"id",
+				"project_copy",
+				"reported_at",
+				"preparation",
+				"base_building",
+				"structure",
+				"supervisor_instruction",
+				"createdAt",
+				"updatedAt"
+			],
+			"definitions": {
+				"create": {
+					"title": "reports_create",
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "integer",
+							"format": "int32"
+						},
+						"project_copy": {},
+						"reported_at": {
+							"type": "string",
+							"format": "date"
+						},
+						"preparation": {
+							"type": "string"
+						},
+						"base_building": {
+							"type": "string"
+						},
+						"structure": {
+							"type": "string"
+						},
+						"supervisor_instruction": {
+							"type": "string"
+						},
+						"createdAt": {
+							"type": "string",
+							"format": "date-time"
+						},
+						"updatedAt": {
+							"type": "string",
+							"format": "date-time"
+						},
+						"project": {
+							"$ref": "#/definitions/projects"
+						}
+					},
+					"required": [
+						"project_copy",
+						"reported_at",
+						"preparation",
+						"base_building",
+						"structure",
+						"supervisor_instruction"
+					]
+				},
+				"update": {
+					"title": "reports_update",
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "integer",
+							"format": "int32"
+						},
+						"project_copy": {},
+						"reported_at": {
+							"type": "string",
+							"format": "date"
+						},
+						"preparation": {
+							"type": "string"
+						},
+						"base_building": {
+							"type": "string"
+						},
+						"structure": {
+							"type": "string"
+						},
+						"supervisor_instruction": {
+							"type": "string"
+						},
+						"createdAt": {
+							"type": "string",
+							"format": "date-time"
+						},
+						"updatedAt": {
+							"type": "string",
+							"format": "date-time"
+						},
+						"project": {
+							"$ref": "#/definitions/projects"
+						}
+					},
+					"required": []
+				}
+			}
+		}
+	}
+}

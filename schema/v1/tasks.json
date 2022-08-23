@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "tasks.json",
+  "title": "Schema Tasks",
+  "type": "object",
+  "required": ["id_projects", "order", "note", "done"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "id_projects": {
+      "type": "number"
+    },
+    "order": {
+      "type": "number"
+    },
+    "note": {
+      "type": "string"
+    },
+    "done": {
+      "type": "boolean"
+    },
+    "createdAt": {
+      "type": "string"
+    },
+    "updatedAt": {
+      "type": "string"
+    }
+  },
+  "definitions": {
+    "create": {
+      "$ref": "tasks.json",
+      "type": "object",
+      "errorMessage": {}
+    },
+    "create_many": {
+      "type": "array",
+      "items": {
+        "$ref": "tasks.json",
+        "type": "object"
+      },
+      "errorMessage": {}
+    },
+    "update": {
+      "$ref": "tasks.json",
+      "type": "object",
+      "required": [],
+      "errorMessage": {}
+    },
+    "update_many": {
+      "type": "array",
+      "items": {
+        "$ref": "tasks.json"
+      },
+      "errorMessage": {}
+    }
+  }
+}

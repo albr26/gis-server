@@ -1,0 +1,41 @@
+{
+	"name": "app",
+	"path": "/media/anas/Data/projects/try/expressjs/data/db.json",
+	"time": 1656449903238,
+	"accounts": [
+		{
+			"username": "anas",
+			"role": "admin",
+			"password": "1234",
+			"id": 1656324388644
+		},
+		{
+			"username": "anas",
+			"role": "admin",
+			"password": "1234",
+			"id": 1656339949297
+		},
+		{
+			"username": "anas",
+			"role": "admin",
+			"password": "1234",
+			"id": 1656390829298
+		},
+		{
+			"username": "mubarak",
+			"role": "admin",
+			"password": "1234",
+			"id": 1656395365330
+		}
+	],
+	"members": [
+		{
+			"image": "",
+			"name": "yasin",
+			"email": "yasin@gis.id",
+			"role": "Anonymous",
+			"password": "1234",
+			"id": 1656449968163
+		}
+	]
+}

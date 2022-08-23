@@ -1,0 +1,14 @@
+p, admin, users, .+, .+
+p, admin, users, u, o
+p, admin, admins, .+, .+
+p, admin, supervisors, .+, .+
+p, admin, projects, r|c|d, .+
+p, admin, reports, r, .+
+p, admin, models, .+, .+
+
+p, supervisor, users, u, o
+p, supervisor, supervisors, .+, .+
+p, supervisor, projects, r|u, .+
+p, supervisor, reports, r|c, .+
+
+g, admin_gis, admin

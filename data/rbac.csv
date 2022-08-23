@@ -1,0 +1,20 @@
+p, root, all, all
+
+p, admin, accounts, readwrite
+p, admin, projects, readwrite
+p, admin, tasks, readwrite
+
+p, supervisor, accounts, readwrite:one
+p, supervisor, projects, read
+p, supervisor, tasks, read:some
+
+p, officer, accounts, readwrite:one
+p, officer, projects, readwrite:one
+p, officer, tasks, readwrite:some
+
+p, common, accounts, readwrite:one
+p, common, public, read
+
+p, anonymous, public, read
+
+g, user, common

@@ -1,0 +1,85 @@
+{
+  "$id": "projects.json",
+  "$schema": "http://json-schema.org/schema",
+  "title": "Schema Projects",
+  "type": "object",
+  "required": [
+    "id_admins",
+    "image",
+    "name",
+    "name_company",
+    "contract_number",
+    "contract_date",
+    "activity",
+    "obstacles",
+    "status",
+    "progress",
+    "fund_source",
+    "fiscal_year",
+    "coordinate",
+    "address"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "type": "integer" },
+    "id_supervisors": { "type": "integer" },
+    "id_admins": { "type": "integer" },
+    "image": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "name_company": {
+      "type": "string"
+    },
+    "contract_number": {
+      "type": "number"
+    },
+    "contract_date": {
+      "type": "string"
+    },
+    "activity": {
+      "type": "string"
+    },
+    "obstacles": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "progress": {
+      "type": "number"
+    },
+    "fund_source": {
+      "type": "string"
+    },
+    "fiscal_year": {
+      "type": "string"
+    },
+    "coordinate": {
+      "type": "array",
+      "items": { "type": "number" }
+    },
+    "address": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "createdAt": {
+      "type": "string"
+    },
+    "updatedAt": {
+      "type": "string"
+    }
+  },
+  "definitions": {
+    "create": {
+      "$ref": "projects.json"
+    },
+    "update": {
+      "$ref": "projects.json",
+      "type": "object",
+      "required": []
+    }
+  }
+}

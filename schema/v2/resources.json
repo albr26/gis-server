@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "resources.json",
+  "definitions": {
+    "params": {
+      "type": "object",
+      "properties": {
+        "dir": {
+          "type": "string",
+          "enum": ["admins", "supervisors", "projects", "reports"],
+          "maxLength": 255
+        },
+        "type": {
+          "type": "string",
+          "enum": ["pictures", "documents", "videos"],
+          "maxLength": 255
+        },
+        "path": {
+          "type": "string",
+          "maxLength": 255
+        }
+      }
+    }
+  }
+}

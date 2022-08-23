@@ -1,0 +1,12 @@
+require("dotenv-expand").expand(require("dotenv").config());
+const path = require("path");
+
+module.exports = {
+  env: process.env,
+  debug: process.env.NODE_ENV == "development",
+  url: process.env.DB_URL,
+  // config: path.resolve("database", "config.json"),
+  "models-path": path.resolve("database", "models"),
+  "seeders-path": path.resolve("database", "seeders"),
+  "migrations-path": path.resolve("database", "migrations"),
+};

@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "gis",
+    "password": "gis",
+    "database": "gis",
+    "host": "localhost",
+    "port": 5432,
+    "dialect": "postgresql"
+  },
+  "test": {
+    "username": "gis",
+    "password": "gis",
+    "database": "database_test",
+    "host": "localhost",
+    "port": 5432,
+    "dialect": "postgresql"
+  },
+  "production": {
+    "username": "gis",
+    "password": "gis",
+    "database": "database_production",
+    "host": "localhost",
+    "port": 5432,
+    "dialect": "postgresql"
+  }
+}

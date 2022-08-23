@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "checkJs": true,
+    "module": "CommonJS",
+    "target": "ESNext",
+    "typeRoots": ["@types", "node_modules/@types"],
+    "baseUrl": ".",
+    "resolveJsonModule": true,
+    "paths": {
+      "#root/*": ["./*"],
+      "#lib/*": ["./lib/*"],
+      "#util/*": ["lib/*"],
+      "#model/*": ["./database/models/*"],
+      "#schema/*": ["./schema/*.json"],
+      "#data/*": ["./data/*.json"],
+      "#middleware/*": ["./middleware/*"],
+      "#api/*": ["./routes/api/*"],
+      "#routes/*": ["./routes/*"]
+    }
+  }
+}

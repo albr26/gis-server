@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robot" content="notallow" />
+    <title>Setting</title>
+    <link rel="stylesheet" href="/public/stylesheets/setting.css" />
+  </head>
+  <body>
+    <h1>Welcome to Setting</h1>
+    <p>Setting Up and Information on Server</p>
+    <section id="s-sys">
+      <h2>System</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for (const [key, value] of Object.entries(sys) ) { %>
+          <tr>
+            <td><%= key %></td>
+            <!-- <td contenteditable="true"><%= value %></td> -->
+            <% if (typeof value == "object") { %>
+            <td>
+              <% for (const [skey, svalue] of Object.entries(value) ) { %>
+              <div>
+                <span><%= skey %></span>
+                <span> : </span>
+                <span><%= svalue %></span>
+              </div>
+              <% } %>
+            </td>
+            <% } else { %>
+            <td><%= value %></td>
+            <% } %>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </section>
+    <section id="s-req">
+      <h2>Requirement</h2>
+      <form>
+        <div>
+          <button>Update</button>
+        </div>
+        <% for (const [key, value] of Object.entries(reqs) ) { %>
+        <div class="key-val">
+          <input id="<%= key %>" type="checkbox" <%= value ? "checked" : "" %>/>
+          <label for="<%= key %>"> <%= key %> </label>
+        </div>
+        <% } %>
+      </form>
+    </section>
+    <section id="s-env">
+      <h2>Environment</h2>
+      <form>
+        <div>
+          <button>Update</button>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Key</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% Object.entries(env).forEach(([key, value], index) => { %>
+            <tr>
+              <td><%= index %></td>
+              <td><%= key %></td>
+              <!-- <td contenteditable="true"><%= value %></td> -->
+              <td class="env-key">
+                <div>
+                  <input
+                    name="<%= key %>"
+                    type="text"
+                    value="<%= value %>"
+                    style="width: -webkit-fill-available"
+                  />
+                </div>
+              </td>
+            </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      </form>
+    </section>
+  </body>
+</html>

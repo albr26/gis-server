@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "admins.json",
+  "title": "Schema Admins",
+  "type": "object",
+  "required": ["username", "password", "role", "email"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "username": {
+      "type": "string"
+    },
+    "password": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string",
+      "const": "admins"
+    },
+    "email": {
+      "type": "string"
+    },
+    "createdAt": {
+      "type": "string"
+    },
+    "updatedAt": {
+      "type": "string"
+    }
+  },
+  "definitions": {
+    "create": {
+      "$ref": "admins.json",
+      "type": "object",
+      "errorMessage": {}
+    },
+    "update": {
+      "$ref": "admins.json",
+      "type": "object",
+      "required": [],
+      "errorMessage": {}
+    }
+  }
+}

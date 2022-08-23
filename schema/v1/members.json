@@ -1,0 +1,78 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "definitions": {
+    "create": {
+      "type": "object",
+      "required": ["username", "email", "role", "password"],
+      "properties": {
+        "username": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "errorMessage": {
+        "type": "data should be an object",
+        "required": {
+          "name": "name required",
+          "email": "email required",
+          "role": "role required",
+          "password": "password required"
+        }
+      }
+    },
+    "update": {
+      "type": "object",
+      "properties": {
+        "username": {
+          "type": ["string", "null"]
+        },
+        "email": {
+          "type": ["string", "null"]
+        },
+        "role": {
+          "type": ["string", "null"]
+        },
+        "password": {
+          "type": ["string", "null"]
+        }
+      }
+    },
+    "undo": {
+      "type": "array",
+      "items": { "type": "object" }
+    },
+    "remove_many": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": ["integer", "null"]
+          },
+          "role": {
+            "type": ["string", "null"]
+          }
+        }
+      }
+    },
+    "signin": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

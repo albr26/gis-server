@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Sign up</h1>
+    <form id="signup">
+      <section>
+        <label for="username">Username</label>
+        <input
+          id="username"
+          name="username"
+          type="text"
+          autocomplete="username"
+          required
+        />
+      </section>
+      <label for="role">Role</label>
+        <input
+          id="role"
+          name="role"
+          type="text"
+          required
+        />
+      </section>
+      <section>
+        <label for="new-password">Password</label>
+        <input
+          id="new-password"
+          name="password"
+          type="password"
+          autocomplete="new-password"
+          required
+        />
+      </section>
+      <button type="submit">Sign up</button>
+    </form>
+  </body>
+  <script>
+    document.forms.namedItem('signup').addEventListener('submit', function (event) {
+      fetch('/api/signup', {
+        method: 'post',
+        headers: {'content-type': 'application/json'},
+        body: JSON.stringify({
+          username: this.elements.namedItem('username').value,
+          role: this.elements.namedItem('role').value,
+          password: this.elements.namedItem('password').value,
+        }),
+      })
+    })
+  </script>
+</html>
